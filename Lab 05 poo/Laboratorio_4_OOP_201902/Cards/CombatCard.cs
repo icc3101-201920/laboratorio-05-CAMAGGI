@@ -11,6 +11,8 @@ namespace Laboratorio_4_OOP_201902.Cards
         private int attackPoints;
         private bool hero;
 
+
+
         //Constructor
         public CombatCard(string name, EnumType type, string effect, int attackPoints, bool hero)
         {

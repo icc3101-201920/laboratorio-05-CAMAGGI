@@ -106,8 +106,31 @@ namespace Laboratorio_4_OOP_201902
         //Metodos
         public void DrawCard(int cardId = 0)
         {
+            CombatCard CC = new CombatCard("Name", Enums.EnumType.None, "E",0,false);
+            SpecialCard SC = new SpecialCard("Name", Enums.EnumType.None, "E");
+            T carta = deck.Cards[cardId];
+            if (carta.GetType() == CC.GetType())
+            {
+                
+                CC.Name = carta.Name;
+                CC.Type = carta.Type;
+                CC.Effect = carta.Effect; 
+                
+            }
+            if (carta.GetType() == SC.GetType())
+            {
+                SC.Name = carta.Name;
+                SC.Type = carta.Type;
+                SC.Effect = carta.Effect;
+            }
+
+
+            ;
+
+            deck.DestroyCard(cardId);
+            
             /*
-            1- Definir si la carta a robada del mazo es CombatCard o SpecialCard
+            1- Definir si la carta ya robada del mazo es CombatCard o SpecialCard
             2- Luego deberá agregar la carta robada al mazo. En este paso debe respetar el tipo por referencia, para esto:
                 2.1- Asigne una variable a la carta robada del mazo, ejemplo, CombatCard card = deck.Cards[cardId]
                 2.2- Cree una CombatCard o SpecialCard (dependiendo del caso) con los valores de la carta del mazo.
